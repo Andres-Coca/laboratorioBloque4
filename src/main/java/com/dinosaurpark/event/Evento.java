@@ -2,7 +2,7 @@ package com.dinosaurpark.event;
 
 import java.time.LocalDateTime;
 
-public abstract class Evento {
+public abstract class Evento implements SimulationEvent {
 
     protected TipoEvento tipo;
     protected String descripcion;

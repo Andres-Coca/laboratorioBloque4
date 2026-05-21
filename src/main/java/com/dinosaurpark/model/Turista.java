@@ -8,6 +8,7 @@ public class Turista {
     private TipoTicket tipoTicket;
     private double presupuesto;
     private double dineroGastado;
+    private boolean herido;
 
     // Constructor PRIVADO — solo el Builder puede crear Turistas
     private Turista() {}
@@ -30,6 +31,13 @@ public class Turista {
             System.out.println(nombre + " no tiene suficiente dinero.");
         }
     }
+
+    public void herir() {
+        this.herido = true;
+        System.out.println("🩸 ¡" + nombre + " fue atacado!");
+    }
+
+    public boolean isHerido() { return herido; }
 
     // Getters
     public int getId()               { return id; }

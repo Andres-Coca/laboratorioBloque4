@@ -1,7 +1,6 @@
 package com.dinosaurpark;
 
-import com.dinosaurpark.model.TipoTicket;
-import com.dinosaurpark.model.Turista;
+import com.dinosaurpark.simulation.Simulacion;
 
 import java.util.Scanner;
 
@@ -10,62 +9,33 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int option;
+        int opcion;
 
         do {
-
             System.out.println("\n=================================");
             System.out.println("       DINOSAUR PARK");
             System.out.println("=================================");
-            System.out.println("1. Registrar dinosaurio");
-            System.out.println("2. Registrar turista");
-            System.out.println("3. Comprar boleto");
-            System.out.println("4. Simular evento");
-            System.out.println("5. Ver estado del parque");
-            System.out.println("6. Salir");
+            System.out.println("1. Iniciar simulación");
+            System.out.println("2. Salir");
             System.out.print("Selecciona una opcion: ");
 
-            option = scanner.nextInt();
+            opcion = scanner.nextInt();
 
-            switch (option) {
-
+            switch (opcion) {
                 case 1:
-                    System.out.println("Registrando dinosaurio...");
+                    Simulacion simulacion = new Simulacion();
+                    simulacion.iniciar();
                     break;
 
                 case 2:
-                    Turista turista = new Turista.Builder()
-                            .conId(1)
-                            .conNombre("Juan")
-                            .conEdad(25)
-                            .conTipoTicket(TipoTicket.PREMIUM)
-                            .conPresupuesto(500.0)
-                            .construir();
-                    turista.mostrarInformacion();
-                    break;
-
-                case 3:
-                    System.out.println("Comprando boleto...");
-                    break;
-
-                case 4:
-                    System.out.println("Simulando evento...");
-                    break;
-
-                case 5:
-                    System.out.println("Mostrando estado del parque...");
-                    break;
-
-                case 6:
-                    System.out.println("Saliendo del sistema...");
+                    System.out.println("👋 ¡Hasta luego!");
                     break;
 
                 default:
-                    System.out.println("Opcion invalida");
-
+                    System.out.println("⚠️  Opción inválida");
             }
 
-        } while (option != 6);
+        } while (opcion != 2);
 
         scanner.close();
     }

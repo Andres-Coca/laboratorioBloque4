@@ -58,7 +58,7 @@ public class PlantaEnergia extends Zona {
 
     public void reparar(double costoReparacion) {
         activa = true;
-        energiaDisponible += 50;
+        energiaDisponible = 50;
         totalGastos += costoReparacion;
         System.out.println("🔧 Planta reparada. Costo: $" + costoReparacion);
     }
