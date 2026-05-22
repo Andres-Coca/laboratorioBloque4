@@ -226,3 +226,7 @@ double precio = estrategia.calcularPrecio(turista); // → 37.5
     │       └── park.properties
     └── test/
         └── java/com/dinosaurpark/
+
+## 📊 UML Diagram
+
+![UML](docs/Diagrama.png)
